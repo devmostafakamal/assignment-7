@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Vintage Leather Backpack",
+    "description": "A handcrafted vintage .",
+    "currentBidPrice": 85.5,
+    "timeLeft": "2h 15m",
+    "bidsCount": 12,
+    "image": "/assets/Bid1-min.png"
+  },
+  {
+    "id": 2,
+    "title": "Apple iPhone 13 - 128GB",
+    "description": "Lightly used iPhone.",
+    "currentBidPrice": 520.0,
+    "timeLeft": "5h 42m",
+    "bidsCount": 24,
+    "image": "/assets/Bid2-min.png"
+  },
+  {
+    "id": 3,
+    "title": "2021 MacBook Pro 14”",
+    "description": "M1 Pro, 16GB RAM, 512GB .",
+    "currentBidPrice": 1450.0,
+    "timeLeft": "1d 3h",
+    "bidsCount": 37,
+    "image": "/assets/Bid3-min.png"
+  },
+  {
+    "id": 4,
+    "title": "Nintendo Switch OLED",
+    "description": "New Nintendo Switch.",
+    "currentBidPrice": 310.75,
+    "timeLeft": "3h 9m",
+    "bidsCount": 19,
+    "image": "/assets/Bid4-min.png"
+  },
+  {
+    "id": 5,
+    "title": "Signed First Edition Book",
+    "description": "Rare signed first edition of.",
+    "currentBidPrice": 2450.0,
+    "timeLeft": "4d 12h",
+    "bidsCount": 8,
+    "image": "/assets/Bid5-min.png"
+  },
+  {
+    "id": 6,
+    "title": "DJI Mini 3 Pro Drone",
+    "description": "Compact drone with 4K .",
+    "currentBidPrice": 670.0,
+    "timeLeft": "6h 30m",
+    "bidsCount": 21,
+    "image": "/assets/Bid6-min.png"
+  }
+]
