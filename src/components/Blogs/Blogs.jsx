@@ -12,8 +12,6 @@ function Blogs() {
   return (
     <div>
       <div>
-        <h2 className="text-2xl">Active Auctions</h2>
-        <p className="text-gray-600">Discover and bid on extraordinary items</p>
         <table className="min-w-full bg-white border border-gray-200 rounded-xl overflow-hidden">
           <thead className="bg-gray-100 text-gray-700 text-left">
             <tr>
