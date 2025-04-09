@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { FaHeart } from "react-icons/fa";
-function Blogs() {
+function Blogs({ handleData }) {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     fetch("blogs.json")
@@ -35,7 +35,10 @@ function Blogs() {
                 <td className="p-3">{blog.description}</td>
                 <td className="p-3">${blog.currentBidPrice}</td>
                 <td className="p-3">{blog.timeLeft}</td>
-                <td className="p-3 text-white-500 text-center">
+                <td
+                  className="p-3 text-white-500 text-center"
+                  onClick={() => handleData(blog)}
+                >
                   {<FaHeart />}
                 </td>
               </tr>
