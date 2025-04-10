@@ -2,15 +2,18 @@ import { useState } from "react";
 import "./App.css";
 import AddItem from "./components/AddItem/AddItem";
 import Blogs from "./components/Blogs/Blogs";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [addItem, setAddItem] = useState([]);
   const handleData = (item) => {
     setAddItem([...addItem, item]);
   };
-
+  // console.log(addItem);
   return (
     <>
+      <ToastContainer></ToastContainer>
       <h2>hello world</h2>
 
       <div>
@@ -21,7 +24,7 @@ function App() {
             <Blogs handleData={handleData}></Blogs>
           </div>
           <div className="right-container w-[30%]">
-            <AddItem addItem={addItem}></AddItem>
+            <AddItem addItem={addItem} setAddItem={setAddItem}></AddItem>
           </div>
         </div>
       </div>

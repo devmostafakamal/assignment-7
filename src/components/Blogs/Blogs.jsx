@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { FaHeart } from "react-icons/fa";
+import { toast } from "react-toastify";
 function Blogs({ handleData }) {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
@@ -8,11 +8,31 @@ function Blogs({ handleData }) {
       .then((res) => res.json())
       .then((data) => setBlogs(data));
   }, []);
-  //   console.log(blogs);
+
+  const [liked, setLiked] = useState({});
+  const handleColor = (id, blog) => {
+    if (!liked[id]) {
+      handleData(blog);
+      setLiked((prev) => ({
+        ...prev,
+        [id]: true,
+      }));
+    }
+    toast.success("Added to favorites!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+  // console.log(blog.id)
   return (
     <div>
-      <div>
-        <table className="min-w-full bg-white border border-gray-200 rounded-xl overflow-hidden">
+      <div className="border rounded bg-white">
+        <table className="min-w-full  border border-gray-200 rounded-xl overflow-hidden ">
           <thead className="bg-gray-100 text-gray-700 text-left">
             <tr>
               <th className="p-3">Image</th>
@@ -35,11 +55,24 @@ function Blogs({ handleData }) {
                 <td className="p-3">{blog.description}</td>
                 <td className="p-3">${blog.currentBidPrice}</td>
                 <td className="p-3">{blog.timeLeft}</td>
-                <td
-                  className="p-3 text-white-500 text-center"
-                  onClick={() => handleData(blog)}
-                >
-                  {<FaHeart />}
+                <td className="p-3 text-white-500 text-center">
+                  <button
+                    className={` ${
+                      liked[blog.id] ? " cursor-not-allowed" : "cursor-pointer"
+                    }`}
+                    onClick={() => handleColor(blog.id, blog)}
+                    disabled={liked[blog.id]}
+                  >
+                    {liked[blog.id] ? (
+                      <img
+                        className="text-red-500"
+                        width={20}
+                        src="/assets/heart (1).png"
+                      />
+                    ) : (
+                      <img width={20} src="/assets/heart.png" />
+                    )}
+                  </button>
                 </td>
               </tr>
             ))}
