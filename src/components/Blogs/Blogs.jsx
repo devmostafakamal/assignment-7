@@ -31,31 +31,31 @@ function Blogs({ handleData }) {
   // console.log(blog.id)
   return (
     <div>
-      <div className="border rounded bg-white">
+      <div className="border rounded ">
         <table className="min-w-full  border border-gray-200 rounded-xl overflow-hidden ">
-          <thead className="bg-gray-100 text-gray-700 text-left">
+          <thead className=" text-left text-xl ">
             <tr>
-              <th className="p-3">Image</th>
-              <th className="p-3">Description</th>
-              <th className="p-3">Bid Price</th>
-              <th className="p-3">Time Left</th>
-              <th className="p-3">Bid Now</th>
+              <th className="p-8">Image</th>
+              <th className="p-5">Description</th>
+              <th className="p-5">Bid Price</th>
+              <th className="p-5">Time Left</th>
+              <th className="p-5 text-center">Bid Now</th>
             </tr>
           </thead>
-          <tbody className="border rounded bg-gray-100">
+          <tbody className="border rounded ">
             {blogs.map((blog) => (
               <tr key={blog.id} className="border-t">
-                <td className="p-3">
+                <td className="p-5">
                   <img
                     src={blog.image}
                     alt=""
                     className="w-16 h-16 object-cover rounded"
                   />
                 </td>
-                <td className="p-3">{blog.description}</td>
-                <td className="p-3">${blog.currentBidPrice}</td>
-                <td className="p-3">{blog.timeLeft}</td>
-                <td className="p-3 text-white-500 text-center">
+                <td className="p-5">{blog.description}</td>
+                <td className="p-5">${blog.currentBidPrice}</td>
+                <td className="p-5">{blog.timeLeft}</td>
+                <td className="p-5 text-white-500 text-center">
                   <button
                     className={` ${
                       liked[blog.id] ? " cursor-not-allowed" : "cursor-pointer"
